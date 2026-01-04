@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Autrix | Autonomous Systems</title>
   <meta name="description" content="Autrix builds AI-driven autonomous systems that remove operational hardship while keeping you in control." />
+  <meta name="theme-color" content="#0b0b0c" />
   <link rel="stylesheet" href="./styles/basic.css" />
 </head>
 
@@ -20,34 +21,39 @@
 
   <header>
     <div class="container nav">
-      <a href="#" class="brand">
-        <div class="logo"></div>
-        <div>
+      <a href="#top" class="brand" aria-label="Autrix Home">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-text">
           <span class="brand-name">AUTRIX</span>
           <span class="brand-tag">Autonomous Systems</span>
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary">
         <ul>
           <li><a href="#systems">Systems</a></li>
           <li><a href="#how">How it works</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#automate">What We Automate</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <main class="container hero">
-    <h1>Operational Autonomy<br><span>Without Compromise</span></h1>
+  <main id="top" class="container hero">
+    <p class="kicker">Autonomous workflow engineering</p>
+
+    <h1>Operational autonomy<br><span>without losing control</span></h1>
+
     <p class="tagline">
-      We keep you as the face of the operation, while AI takes away the hardship.
+      You stay the decision-maker and public face. Autrix builds systems where AI removes the repetitive work
+      while guardrails keep accountability and oversight intact.
     </p>
 
     <div class="actions">
-      <a href="#systems" class="btn primary">Scroll Down</a>
-      <a href="#contact" class="btn secondary">Start a Conversation</a>
+      <a href="#systems" class="btn primary">Explore Systems</a>
+      <a href="#contact" class="btn secondary">Talk to Autrix</a>
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -62,37 +68,43 @@
       <div class="section-head">
         <h2>Our Systems</h2>
         <p>
-          Autrix builds autonomous workflows that run the boring, repetitive, and high-friction parts of your business
-          with consistency. You stay in control. The system does the work.
+          We design autonomous workflows that reduce friction, eliminate handoffs, and improve consistency.
+          Every system is built with guardrails, logging, and human-in-control checkpoints.
         </p>
       </div>
 
       <div class="cards">
         <article class="card">
-          <h3>Autonomous Operations</h3>
-          <p>Automate repeatable work across tools, teams, and vendors—without adding chaos.</p>
+          <div class="card-top">
+            <h3>Autonomous Operations</h3>
+            <p>Orchestrate repeatable work across tools, teams, and vendors without adding chaos.</p>
+          </div>
           <ul>
             <li>Workflow orchestration</li>
-            <li>Approvals & escalation logic</li>
+            <li>Approvals and escalation logic</li>
             <li>Audit-ready logging</li>
           </ul>
         </article>
 
         <article class="card">
-          <h3>AI Assist Layers</h3>
-          <p>AI handles the grind: triage, drafting, summarizing, routing, and pattern detection.</p>
+          <div class="card-top">
+            <h3>AI Assist Layers</h3>
+            <p>AI handles triage, drafting, summarization, routing, and signal detection.</p>
+          </div>
           <ul>
             <li>Intake → classify → route</li>
-            <li>Smart drafting & response templates</li>
-            <li>Signal extraction from noise</li>
+            <li>Drafting with templates</li>
+            <li>Noise reduction and prioritization</li>
           </ul>
         </article>
 
         <article class="card">
-          <h3>Human-in-Control Design</h3>
-          <p>You remain the decision-maker and public face. AI supports—never replaces your authority.</p>
+          <div class="card-top">
+            <h3>Human-in-Control Design</h3>
+            <p>You remain the authority. AI supports your operation without replacing it.</p>
+          </div>
           <ul>
-            <li>Guardrails & review gates</li>
+            <li>Review gates and guardrails</li>
             <li>Clear accountability</li>
             <li>Fail-safe manual takeover</li>
           </ul>
@@ -105,12 +117,27 @@
   <section id="how" class="section alt">
     <div class="container">
       <div class="two-col">
-        <div>
+        <div class="how-copy">
           <h2>How it works</h2>
           <p>
-            We map the workload that drains your team, then build an autonomous layer that executes it reliably.
-            The result is fewer handoffs, fewer mistakes, and faster outcomes.
+            We map the workload draining your team, then build an autonomous layer that executes it reliably.
+            The result is fewer mistakes, fewer handoffs, and faster outcomes.
           </p>
+
+          <div class="mini-proof">
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">phases</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">1</span>
+              <span class="stat-label">owner</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">iterations</span>
+            </div>
+          </div>
         </div>
 
         <div class="steps">
@@ -118,21 +145,23 @@
             <span class="num">01</span>
             <div>
               <h4>Identify friction</h4>
-              <p>Find the repetitive work, the bottlenecks, and the expensive failure points.</p>
+              <p>Find repetitive work, bottlenecks, and costly failure points.</p>
             </div>
           </div>
+
           <div class="step">
             <span class="num">02</span>
             <div>
               <h4>Automate with guardrails</h4>
-              <p>Build workflows that operate autonomously with approvals, logs, and safe fallbacks.</p>
+              <p>Build autonomy with approvals, logs, safe fallbacks, and ownership.</p>
             </div>
           </div>
+
           <div class="step">
             <span class="num">03</span>
             <div>
               <h4>Deploy and iterate</h4>
-              <p>Ship fast, measure impact, and continuously harden reliability.</p>
+              <p>Ship, measure impact, and continuously harden reliability.</p>
             </div>
           </div>
         </div>
@@ -140,22 +169,116 @@
     </div>
   </section>
 
-  <!-- CONTACT (new section) -->
+<section id="automate" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>What we automate</h2>
+      <p>
+        We automate systems that are stuck doing unnecessary work.
+        The goal is not speed alone — it is permanence.
+        Once a workflow is simplified and automated, your company earns that time back forever.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Intake & Requests</h3>
+        <p>Remove manual triage and routing from your day-to-day operations.</p>
+        <ul>
+          <li>Email and form intake</li>
+          <li>Request classification</li>
+          <li>Auto-routing to the right owner</li>
+          <li>Priority and SLA tagging</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Approvals & Hand-offs</h3>
+        <p>Replace follow-ups, pings, and bottlenecks with enforced logic.</p>
+        <ul>
+          <li>Approval chains with guardrails</li>
+          <li>Escalation paths</li>
+          <li>Status visibility without meetings</li>
+          <li>Fail-safe manual overrides</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Internal Operations</h3>
+        <p>Automate the work teams repeat every week but never optimize.</p>
+        <ul>
+          <li>Internal requests and tickets</li>
+          <li>Scheduling and confirmations</li>
+          <li>Recurring operational tasks</li>
+          <li>Cross-team coordination</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Customer & Support Workflows</h3>
+        <p>Reduce response time while keeping humans in control.</p>
+        <ul>
+          <li>Inbox triage and categorization</li>
+          <li>Drafted responses for review</li>
+          <li>Follow-up enforcement</li>
+          <li>Audit-ready communication logs</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Reporting & Visibility</h3>
+        <p>Turn raw activity into usable signals without manual reporting.</p>
+        <ul>
+          <li>Daily and weekly summaries</li>
+          <li>Exception and anomaly detection</li>
+          <li>Executive-level rollups</li>
+          <li>Operational health indicators</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Tool-to-Tool Automation</h3>
+        <p>Connect systems that were never designed to work together.</p>
+        <ul>
+          <li>CRM ↔ inbox ↔ internal tools</li>
+          <li>Finance and accounting flows</li>
+          <li>Data normalization across platforms</li>
+          <li>Controlled, auditable integrations</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="container">
       <div class="section-head">
         <h2>Contact</h2>
         <p>
-          Tell us what you want to automate. We’ll map the friction, define guardrails, and design an autonomous system
-          that keeps you in control while removing the operational grind. If you have a process, a backlog, or a bottleneck,
-          we can turn it into a reliable, auditable workflow.
+          Tell us what you want to automate. We’ll map the friction, define guardrails, and design a workflow
+          that removes operational grind while keeping you in control.
         </p>
       </div>
 
-      <p class="contact-note">
-        Email: <a href="mailto:hello@autrix.ai">hello@autrix.ai</a> &nbsp;•&nbsp;
-        Response time: 1–2 business days
-      </p>
+      <div class="contact-panel">
+        <div class="contact-left">
+          <p class="contact-note">
+            Email: <a href="mailto:hello@autrix.ai">hello@autrix.ai</a><br />
+            Response time: 1–2 business days
+          </p>
+          <p class="contact-sub">
+            Include your tools (ex: Gmail, Slack, HubSpot) and your goal. We’ll reply with a plan.
+          </p>
+        </div>
+
+        <div class="contact-right">
+          <a class="btn primary contact-cta" href="mailto:hello@autrix.ai?subject=Autrix%20Workflow%20Build&body=Tools%3A%20%0AGoal%3A%20%0ABiggest%20bottleneck%3A%20">
+            Email Autrix
+          </a>
+          <p class="contact-micro">Prefer concise? Three lines is enough.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -165,6 +288,6 @@
     </div>
   </footer>
 
-<script src="./scripts/basic.js"></script>
+  <script src="./scripts/basic.js"></script>
 </body>
 </html>
