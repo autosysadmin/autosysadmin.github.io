@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autrix | Autonomous Systems</title>
+  <meta name="description" content="Autrix builds AI-driven autonomous systems that remove operational hardship while keeping you in control." />
+  <link rel="stylesheet" href="./styles/basic.css" />
+</head>
+
+<body>
+  <!-- Theme toggle (top-left) -->
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="label">Theme</span>
+  </button>
+
+  <!-- Grid background -->
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="logo"></div>
+        <div>
+          <span class="brand-name">AUTRIX</span>
+          <span class="brand-tag">Autonomous Systems</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#systems">Systems</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container hero">
+    <h1>Operational Autonomy<br><span>Without Compromise</span></h1>
+    <p class="tagline">
+      We keep you as the face of the operation, while AI takes away the hardship.
+    </p>
+
+    <div class="actions">
+      <a href="#systems" class="btn primary">Scroll Down</a>
+      <a href="#contact" class="btn secondary">Start a Conversation</a>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="chev">⌄</span>
+      <span class="text">Scroll</span>
+    </div>
+  </main>
+
+  <!-- SYSTEMS -->
+  <section id="systems" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Systems</h2>
+        <p>
+          Autrix builds autonomous workflows that run the boring, repetitive, and high-friction parts of your business
+          with consistency. You stay in control. The system does the work.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Autonomous Operations</h3>
+          <p>Automate repeatable work across tools, teams, and vendors—without adding chaos.</p>
+          <ul>
+            <li>Workflow orchestration</li>
+            <li>Approvals & escalation logic</li>
+            <li>Audit-ready logging</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>AI Assist Layers</h3>
+          <p>AI handles the grind: triage, drafting, summarizing, routing, and pattern detection.</p>
+          <ul>
+            <li>Intake → classify → route</li>
+            <li>Smart drafting & response templates</li>
+            <li>Signal extraction from noise</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Human-in-Control Design</h3>
+          <p>You remain the decision-maker and public face. AI supports—never replaces your authority.</p>
+          <ul>
+            <li>Guardrails & review gates</li>
+            <li>Clear accountability</li>
+            <li>Fail-safe manual takeover</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section alt">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2>How it works</h2>
+          <p>
+            We map the workload that drains your team, then build an autonomous layer that executes it reliably.
+            The result is fewer handoffs, fewer mistakes, and faster outcomes.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span class="num">01</span>
+            <div>
+              <h4>Identify friction</h4>
+              <p>Find the repetitive work, the bottlenecks, and the expensive failure points.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">02</span>
+            <div>
+              <h4>Automate with guardrails</h4>
+              <p>Build workflows that operate autonomously with approvals, logs, and safe fallbacks.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">03</span>
+            <div>
+              <h4>Deploy and iterate</h4>
+              <p>Ship fast, measure impact, and continuously harden reliability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (new section) -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>
+          Tell us what you want to automate. We’ll map the friction, define guardrails, and design an autonomous system
+          that keeps you in control while removing the operational grind. If you have a process, a backlog, or a bottleneck,
+          we can turn it into a reliable, auditable workflow.
+        </p>
+      </div>
+
+      <p class="contact-note">
+        Email: <a href="mailto:hello@autrix.ai">hello@autrix.ai</a> &nbsp;•&nbsp;
+        Response time: 1–2 business days
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer">
+      <p>© <span id="year"></span> Autrix LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // theme toggle: default dark; toggle to light
+    const root = document.documentElement;
+    const toggle = document.getElementById("themeToggle");
+
+    // Persist theme
+    const saved = localStorage.getItem("autrixTheme");
+    if (saved === "light") root.classList.add("theme-light");
+
+    toggle.addEventListener("click", () => {
+      root.classList.toggle("theme-light");
+      localStorage.setItem("autrixTheme", root.classList.contains("theme-light") ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
