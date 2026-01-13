@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autrix | Autonomous Systems</title>
-  <meta name="description" content="Autrix builds AI-driven autonomous systems that remove operational hardship while keeping you in control." />
+  <title>GridBlack | Autonomy Solutions</title>
+
+  <meta name="description"
+        content="GridBlack builds SIEM-powered visibility, AI-assisted analysis, and workflow automation systems that reduce noise, enforce guardrails, and produce audit-ready execution." />
+
   <meta name="theme-color" content="#0b0b0c" />
   <link rel="stylesheet" href="./styles/basic.css" />
 </head>
 
 <body>
-  <!-- Theme toggle (top-left) -->
+  <!-- Theme toggle (top-right) -->
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
     <span class="dot" aria-hidden="true"></span>
     <span class="label">Theme</span>
@@ -19,32 +22,30 @@
   <!-- Grid background -->
   <div class="grid-bg" aria-hidden="true"></div>
 
+  <!-- Header -->
   <header>
-   <div class="container nav">
-  <a href="#top" class="brand" aria-label="Autrix Home">
-    <img
-      src="./assets/logo.png"
-      alt="Autrix logo"
-      class="logo"
-      width="36"
-      height="36"
-    />
-    <div class="brand-text">
-      <span class="brand-name">AUTRIX</span>
-      <span class="brand-tag">Autonomous Systems</span>
-    </div>
-  </a>
-</div>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="GridBlack Home">
+        <img
+          src="./assets/blackgrid.png"
+          alt="GridBlack logo"
+          class="brand-logo"
+          decoding="async"
+          loading="eager"
+        />
 
+        <div class="brand-text">
+          <span class="brand-name">GRIDBLACK</span>
+          <span class="brand-tag">Workflow Automation • SIEM • AI </span>
+        </div>
       </a>
 
       <nav aria-label="Primary">
         <ul>
           <li><a href="#systems">Systems</a></li>
           <li><a href="#how">How it works</a></li>
-          <li><a href="#automate">What We Automate</a></li>
+          <li><a href="#automate">What We Build</a></li>
           <li><a href="#contact">Contact</a></li>
-        
         </ul>
       </nav>
     </div>
@@ -52,18 +53,21 @@
 
   <!-- HERO -->
   <main id="top" class="container hero">
-    <p class="kicker">Autonomous workflow engineering</p>
+    <p class="kicker">Security visibility + controlled autonomy</p>
 
-    <h1>Operational autonomy<br><span>without losing control</span></h1>
+    <h1>
+      SIEM-grade visibility<br />
+      <span>AI-assisted decisions, automated execution</span>
+    </h1>
 
     <p class="tagline">
-      You stay the decision-maker and public face. Autrix builds systems where AI removes the repetitive work
-      while guardrails keep accountability and oversight intact.
+      GridBlack builds systems that turn raw telemetry into prioritized signals, then routes the right actions through
+      approval gates, runbooks, and audit trails. Less noise. Faster response. Clear ownership.
     </p>
 
     <div class="actions">
       <a href="#systems" class="btn primary">Explore Systems</a>
-      <a href="#contact" class="btn secondary">Talk to Autrix</a>
+      <a href="#contact" class="btn secondary">Talk to GridBlack</a>
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -78,45 +82,39 @@
       <div class="section-head">
         <h2>Our Systems</h2>
         <p>
-          We design autonomous workflows that reduce friction, eliminate handoffs, and improve consistency.
-          Every system is built with guardrails, logging, and human-in-control checkpoints.
+          We unify SIEM visibility, AI-assisted analysis, and workflow automation into one controlled execution layer.
+          Everything is measured, logged, and designed for human-in-control decision points.
         </p>
       </div>
 
       <div class="cards">
         <article class="card">
-          <div class="card-top">
-            <h3>Autonomous Operations</h3>
-            <p>Orchestrate repeatable work across tools, teams, and vendors without adding chaos.</p>
-          </div>
+          <h3>SIEM & Security Visibility</h3>
+          <p>Collect, normalize, and correlate logs so you see real signals instead of raw noise.</p>
           <ul>
-            <li>Workflow orchestration</li>
-            <li>Approvals and escalation logic</li>
-            <li>Audit-ready logging</li>
+            <li>Log ingestion, parsing, and normalization</li>
+            <li>Correlation rules, detections, and baselines</li>
+            <li>Dashboards, alerting, and reporting</li>
           </ul>
         </article>
 
         <article class="card">
-          <div class="card-top">
-            <h3>AI Assist Layers</h3>
-            <p>AI handles triage, drafting, summarization, routing, and signal detection.</p>
-          </div>
+          <h3>AI-Assisted Analysis</h3>
+          <p>AI supports triage and enrichment, while humans retain authority over decisions.</p>
           <ul>
-            <li>Intake → classify → route</li>
-            <li>Drafting with templates</li>
-            <li>Noise reduction and prioritization</li>
+            <li>Alert summarization and enrichment</li>
+            <li>Priority ranking and routing recommendations</li>
+            <li>Executive rollups and analyst-ready notes</li>
           </ul>
         </article>
 
         <article class="card">
-          <div class="card-top">
-            <h3>Human-in-Control Design</h3>
-            <p>You remain the authority. AI supports your operation without replacing it.</p>
-          </div>
+          <h3>Workflow Automation</h3>
+          <p>Turn detections into controlled actions with approvals, runbooks, and audit trails.</p>
           <ul>
-            <li>Review gates and guardrails</li>
-            <li>Clear accountability</li>
-            <li>Fail-safe manual takeover</li>
+            <li>Intake → classify → route → execute</li>
+            <li>Approval gates and escalation logic</li>
+            <li>Manual takeover and safe rollback paths</li>
           </ul>
         </article>
       </div>
@@ -127,51 +125,40 @@
   <section id="how" class="section alt">
     <div class="container">
       <div class="two-col">
-        <div class="how-copy">
+        <div>
           <h2>How it works</h2>
           <p>
-            We map the workload draining your team, then build an autonomous layer that executes it reliably.
-            The result is fewer mistakes, fewer handoffs, and faster outcomes.
+            We start with telemetry and process mapping, then build a controlled autonomous layer that executes reliably.
+            You get faster response, fewer mistakes, and a clear audit trail for every decision and action.
           </p>
 
-          <div class="mini-proof">
-            <div class="stat">
-              <span class="stat-num">3</span>
-              <span class="stat-label">phases</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">1</span>
-              <span class="stat-label">owner</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">∞</span>
-              <span class="stat-label">iterations</span>
-            </div>
-          </div>
+          <p class="contact-note">
+            Translation: your SIEM becomes actionable, your AI becomes accountable, and your automation stays safe.
+          </p>
         </div>
 
         <div class="steps">
           <div class="step">
             <span class="num">01</span>
             <div>
-              <h4>Identify friction</h4>
-              <p>Find repetitive work, bottlenecks, and costly failure points.</p>
+              <h4>Instrument signals</h4>
+              <p>Onboard sources, normalize events, and define what “real” looks like in your environment.</p>
             </div>
           </div>
 
           <div class="step">
             <span class="num">02</span>
             <div>
-              <h4>Automate with guardrails</h4>
-              <p>Build autonomy with approvals, logs, safe fallbacks, and ownership.</p>
+              <h4>Assist analysis</h4>
+              <p>Enrich and summarize alerts, rank priority, and route to the right owner with context.</p>
             </div>
           </div>
 
           <div class="step">
             <span class="num">03</span>
             <div>
-              <h4>Deploy and iterate</h4>
-              <p>Ship, measure impact, and continuously harden reliability.</p>
+              <h4>Automate execution</h4>
+              <p>Convert decisions into workflow actions with approvals, evidence, and audit-ready logging.</p>
             </div>
           </div>
         </div>
@@ -179,123 +166,102 @@
     </div>
   </section>
 
-<section id="automate" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>What we automate</h2>
-      <p>
-        We automate systems that are stuck doing unnecessary work.
-        The goal is not speed alone — it is permanence.
-        Once a workflow is simplified and automated, your company earns that time back forever.
-      </p>
+  <!-- WHAT WE BUILD -->
+  <section id="automate" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>What we build</h2>
+        <p>
+          GridBlack delivers SIEM foundations, AI-assisted triage, and workflow automation that reduces manual work while
+          improving accountability and response quality.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>SIEM Foundations</h3>
+          <p>Build ingestion and search that performs in production.</p>
+          <ul>
+            <li>Source onboarding and parsing standards</li>
+            <li>Retention, access controls, and governance</li>
+            <li>Dashboards for baseline health and drift</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Detections & Correlation</h3>
+          <p>Turn events into detections you can trust.</p>
+          <ul>
+            <li>Rule-based detections and correlation chains</li>
+            <li>Tuning to reduce noise without losing coverage</li>
+            <li>Incident-ready evidence trails</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>AI Triage Layer</h3>
+          <p>Speed up response without surrendering control.</p>
+          <ul>
+            <li>Summaries, enrichment, and context gathering</li>
+            <li>Routing suggestions and prioritization</li>
+            <li>Analyst notes drafted for review</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Workflow Management</h3>
+          <p>Replace handoffs and follow-ups with enforced logic.</p>
+          <ul>
+            <li>Queues, assignments, SLAs, and escalation</li>
+            <li>Approvals, change control, and checkpoints</li>
+            <li>Status visibility without constant meetings</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Security Automation</h3>
+          <p>Controlled playbooks triggered by real signals.</p>
+          <ul>
+            <li>Auto-ticketing and evidence packaging</li>
+            <li>Containment steps with approval gates</li>
+            <li>Action logging for audit and compliance</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Full-Stack Implementation</h3>
+          <p>When the tool doesn’t exist, we build it securely.</p>
+          <ul>
+            <li>Internal dashboards and secure portals</li>
+            <li>APIs and integrations across your stack</li>
+            <li>Security-first patterns and deployment</li>
+          </ul>
+        </article>
+      </div>
     </div>
-
-    <div class="cards">
-      <article class="card">
-        <h3>Intake & Requests</h3>
-        <p>Remove manual triage and routing from your day-to-day operations.</p>
-        <ul>
-          <li>Email and form intake</li>
-          <li>Request classification</li>
-          <li>Auto-routing to the right owner</li>
-          <li>Priority and SLA tagging</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Approvals & Hand-offs</h3>
-        <p>Replace follow-ups, pings, and bottlenecks with enforced logic.</p>
-        <ul>
-          <li>Approval chains with guardrails</li>
-          <li>Escalation paths</li>
-          <li>Status visibility without meetings</li>
-          <li>Fail-safe manual overrides</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Internal Operations</h3>
-        <p>Automate the work teams repeat every week but never optimize.</p>
-        <ul>
-          <li>Internal requests and tickets</li>
-          <li>Scheduling and confirmations</li>
-          <li>Recurring operational tasks</li>
-          <li>Cross-team coordination</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Customer & Support Workflows</h3>
-        <p>Reduce response time while keeping humans in control.</p>
-        <ul>
-          <li>Inbox triage and categorization</li>
-          <li>Drafted responses for review</li>
-          <li>Follow-up enforcement</li>
-          <li>Audit-ready communication logs</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Reporting & Visibility</h3>
-        <p>Turn raw activity into usable signals without manual reporting.</p>
-        <ul>
-          <li>Daily and weekly summaries</li>
-          <li>Exception and anomaly detection</li>
-          <li>Executive-level rollups</li>
-          <li>Operational health indicators</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Tool-to-Tool Automation</h3>
-        <p>Connect systems that were never designed to work together.</p>
-        <ul>
-          <li>CRM ↔ inbox ↔ internal tools</li>
-          <li>Finance and accounting flows</li>
-          <li>Data normalization across platforms</li>
-          <li>Controlled, auditable integrations</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Contact</h2>
-      <p>
-        Reach out to discuss automation opportunities or to explore whether
-        Autrix is a fit for your workflow.
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>
+          If you need SIEM implementation, AI-assisted analysis, or workflow automation—reach out.
+          If it’s noisy, repetitive, or risky, GridBlack can make it controlled and measurable.
+        </p>
+      </div>
+
+      <p class="contact-note">
+        Email: <a href="mailto:gridblack@proton.me">Gridblack@proton.me</a><br />
+        Response time: 1–2 business days
       </p>
     </div>
-
-    <div class="contact-panel">
-      <div class="contact-left">
-        <p class="contact-note">
-          Email: <a href="mailto:AutrixSystems@proton.me">AutrixSystems@proton.me</a><br />
-          Response time: 1–2 business days
-        </p>
-        <p class="contact-sub">
-          Include the tools you use and the process you want to improve.
-          A short message is sufficient.
-        </p>
-      </div>
-
-      <div class="contact-right">
-        <p class="contact-micro">
-          Secure, privacy-focused communication via Proton Mail.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <footer>
     <div class="container footer">
-      <p>© <span id="year"></span> Autrix LLC. All rights reserved.</p>
+      <p>© <span id="year"></span> GridBlack LLC. All rights reserved.</p>
     </div>
   </footer>
 

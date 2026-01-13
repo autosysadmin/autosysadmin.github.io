@@ -1,72 +1,92 @@
+/* =========================================================
+   BLACKGRID — SIEM + AI + WORKFLOW AUTONOMY
+   (Grid + Per-section fade alignment)
+   ========================================================= */
+
 :root {
   --bg: #0b0b0c;
   --bg-alt: #101012;
   --fg: #f5f5f6;
   --muted: #b5b5bc;
 
-  /* DARK THEME GRID: subtle white */
-  --grid-major: rgba(255,255,255,0.06);
-  --grid-minor: rgba(255,255,255,0.025);
+  /* Brand accent (logo blue) */
+  --accent: #41b6ff;
+  --accent-2: #2b7bff;
 
+  /* Grid colors */
+  --grid-minor: rgba(255,255,255,0.022);
+  --grid-major: rgba(255,255,255,0.055);
+
+  /* Grid steps (real, defined) */
+  --minor-step: 24px;
+  --major-step: calc(var(--minor-step) * 6); /* 144px */
+
+  /* Surfaces */
   --card: rgba(255,255,255,0.05);
   --border: rgba(255,255,255,0.12);
   --radius: 18px;
 
-  --header-bg: rgba(10,10,12,0.6);
+  /* Header */
+  --header-bg: rgba(10,10,12,0.62);
   --header-border: rgba(255,255,255,0.08);
   --hover-bg: rgba(255,255,255,0.05);
+
+  /* Sections */
   --section-border: rgba(255,255,255,0.08);
   --alt-section-bg: rgba(255,255,255,0.02);
   --step-bg: rgba(255,255,255,0.03);
   --footer-border: rgba(255,255,255,0.08);
+
+  /* Readability controls */
+  --content-haze: rgba(0,0,0,0.46);   /* haze behind text */
+  --section-fade: 120px;              /* clean zone at top of each section */
 }
 
-/* LIGHT THEME (soft grey, not pure white) */
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
 html.theme-light {
   --bg: #f1f2f4;
   --bg-alt: #e9ebee;
   --fg: #0b0b0c;
   --muted: rgba(11,11,12,0.65);
 
-  /* LIGHT THEME GRID: subtle white-blue */
-  --grid-major: rgba(70, 130, 255, 0.10);
-  --grid-minor: rgba(70, 130, 255, 0.05);
+  --grid-major: rgba(70,130,255,0.10);
+  --grid-minor: rgba(70,130,255,0.05);
 
   --card: rgba(0,0,0,0.04);
   --border: rgba(0,0,0,0.12);
 
-  --header-bg: rgba(241,242,244,0.78);
+  --header-bg: rgba(241,242,244,0.82);
   --header-border: rgba(0,0,0,0.08);
   --hover-bg: rgba(0,0,0,0.04);
+
   --section-border: rgba(0,0,0,0.08);
   --alt-section-bg: rgba(0,0,0,0.02);
   --step-bg: rgba(0,0,0,0.03);
   --footer-border: rgba(0,0,0,0.08);
+
+  --content-haze: rgba(255,255,255,0.55);
 }
 
-/* Reset */
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 html { scroll-behavior: smooth; }
-.theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 18px;   /* move to the right */
-  left: auto;    /* override any existing left */
-  z-index: 1000;
-}
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color: var(--fg);
   background: linear-gradient(180deg, var(--bg), var(--bg-alt));
   overflow-x: hidden;
-
-  /* Header is fixed; push content down */
-  padding-top: 72px;
+  padding-top: 78px; /* fixed header offset */
 }
 
-/* Grid Background */
+/* =========================================================
+   GRID BACKGROUND (GLOBAL, STABLE)
+   ========================================================= */
 .grid-bg {
   position: fixed;
   inset: 0;
@@ -80,19 +100,21 @@ body {
     linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
 
   background-size:
-    140px 140px,
-    140px 140px,
-    24px 24px,
-    24px 24px;
+    var(--major-step) var(--major-step),
+    var(--major-step) var(--major-step),
+    var(--minor-step) var(--minor-step),
+    var(--minor-step) var(--minor-step);
+
+  /* Keep origin deterministic */
+  background-position: 0 0, 0 0, 0 0, 0 0;
 
   opacity: 1;
-
-  /* Subtle fade to keep focus on hero text */
-  mask-image: radial-gradient(circle at 40% 20%, rgba(0,0,0,0.95) 35%, transparent 78%);
-  -webkit-mask-image: radial-gradient(circle at 40% 20%, rgba(0,0,0,0.95) 35%, transparent 78%);
+  transform: translateZ(0);
 }
 
-/* Layout */
+/* =========================================================
+   LAYOUT
+   ========================================================= */
 .container {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
@@ -100,16 +122,14 @@ body {
   z-index: 1;
 }
 
-/* Header (always visible) */
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
+  inset: 0 0 auto 0;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   background: var(--header-bg);
   border-bottom: 1px solid var(--header-border);
   z-index: 999;
@@ -126,45 +146,37 @@ header {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: var(--fg);
+  gap: 14px;
   text-decoration: none;
-  white-space: nowrap;
+  color: var(--fg);
 }
 
-.logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-  border: 1px solid rgba(255,255,255,0.15);
+.brand-logo {
+  height: 44px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(65,182,255,0.22));
 }
 
-html.theme-light .logo {
-  background: linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
-  border: 1px solid rgba(0,0,0,0.12);
-}
+.brand-text { line-height: 1.05; }
 
 .brand-name {
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
 }
 
 .brand-tag {
-  display: block;
   font-size: 12px;
   color: var(--muted);
 }
 
-/* Nav Links */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   padding: 0;
   margin: 0;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 nav a {
@@ -173,8 +185,6 @@ nav a {
   padding: 8px 12px;
   border-radius: 12px;
   transition: 0.2s ease;
-  display: inline-block;
-  white-space: nowrap;
 }
 
 nav a:hover {
@@ -182,27 +192,68 @@ nav a:hover {
   background: var(--hover-bg);
 }
 
-/* Hero */
-.hero {
-  padding: 120px 0 100px;
-  text-align: left;
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+.theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+
+  background: rgba(10,10,12,0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+
+  color: var(--fg);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+html.theme-light .theme-toggle { background: rgba(241,242,244,0.86); }
+.theme-toggle:hover { transform: translateY(-1px); }
+
+.theme-toggle .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(65,182,255,0.35);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero { padding: 120px 0 100px; }
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
 }
 
 .hero h1 {
   font-size: clamp(2.4rem, 6vw, 4rem);
   line-height: 1.05;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
+.hero h1 span { color: var(--muted); }
 
-.hero h1 span {
-  color: var(--muted);
-}
-
-.tagline,
-.hero p {
-  max-width: 620px;
+.tagline {
+  max-width: 640px;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--muted);
   margin-bottom: 36px;
 }
@@ -218,132 +269,82 @@ nav a:hover {
   padding: 14px 22px;
   border-radius: var(--radius);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 650;
   border: 1px solid var(--border);
-  transition: 0.25s ease;
 }
 
 .btn.primary {
-  background: #ffffff;
-  color: #000000;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #071018;
+  box-shadow: 0 10px 30px rgba(65,182,255,0.15);
 }
+.btn.secondary { color: var(--fg); }
 
-.btn.primary:hover {
-  opacity: 0.88;
-}
-
-.btn.secondary {
-  background: transparent;
-  color: var(--fg);
-}
-
-.btn.secondary:hover {
-  background: var(--hover-bg);
-}
-
-/* Top-left theme toggle */
-.theme-toggle {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(10,10,12,0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  color: var(--fg);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-html.theme-light .theme-toggle {
-  background: rgba(241,242,244,0.85);
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px);
-}
-
-.theme-toggle .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--fg);
-  opacity: 0.9;
-}
-
-.theme-toggle {
-  top: 10px;
-  right: 10px;
-  left: auto;
-}
-
-
-
-/* Scroll hint */
-.scroll-hint {
-  margin-top: 54px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--muted);
-  opacity: 0.9;
-  user-select: none;
-}
-
-.scroll-hint .chev {
-  font-size: 18px;
-  animation: bob 1.2s ease-in-out infinite;
-}
-
-.scroll-hint .text {
-  font-size: 12px;
-  letter-spacing: 0.3px;
-}
-
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
-
-/* Anchor spacing for fixed header */
-#systems, #how, #contact {
-  scroll-margin-top: 110px;
-}
-
-/* Sections */
+/* =========================================================
+   SECTIONS — PER-SECTION GRID FADE ALIGNMENT
+   Each section gets a clean “black start” then fades into grid.
+   ========================================================= */
 .section {
   position: relative;
   padding: 140px 0;
   border-top: 1px solid var(--section-border);
 }
 
-/* Subtle separation haze */
-.section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  background: radial-gradient(900px 420px at 30% 20%, rgba(255,255,255,0.045), transparent 60%);
-  opacity: 1;
+/* Alt section background */
+.section.alt {
+  background: var(--alt-section-bg);
+  padding: 160px 0;
 }
 
-html.theme-light .section::before{
-  background: radial-gradient(900px 420px at 30% 20%, rgba(0,0,0,0.035), transparent 60%);
+/* 1) Clean black start at top of EACH section (aligns the fade) */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; right: 0;
+  height: var(--section-fade);
+  pointer-events: none;
+  z-index: 0;
+
+  /* dark-to-transparent fade: makes the section "start clean" */
+  background: linear-gradient(
+    to bottom,
+    rgba(11,11,12,0.96) 0%,
+    rgba(11,11,12,0.60) 45%,
+    rgba(11,11,12,0.00) 100%
+  );
 }
 
-.section > .container{
-  position: relative;
-  z-index: 1;
+html.theme-light .section::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(241,242,244,0.96) 0%,
+    rgba(241,242,244,0.60) 45%,
+    rgba(241,242,244,0.00) 100%
+  );
 }
 
-.section .section-head {
+/* 2) Readability haze behind content blocks (prevents grid/text clash) */
+.section > .container::before,
+main.container::before {
+  content: "";
+  position: absolute;
+  inset: -18px -12px;
+  pointer-events: none;
+  z-index: -1;
+
+  background: radial-gradient(
+    900px 420px at 25% 15%,
+    var(--content-haze),
+    transparent 65%
+  );
+}
+
+/* Keep normal stacking: content above section fade */
+.section > .container,
+main.container { position: relative; z-index: 1; }
+
+.section-head {
   max-width: 780px;
   margin-bottom: 28px;
 }
@@ -351,70 +352,47 @@ html.theme-light .section::before{
 .section h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   margin: 0 0 12px;
-  letter-spacing: 0.2px;
 }
 
 .section p {
-  margin: 0;
   color: var(--muted);
   line-height: 1.7;
-}
-
-/* Alt section */
-.section.alt {
-  background: var(--alt-section-bg);
-  padding: 160px 0;
+  margin: 0;
 }
 
 /* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 22px;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 18px 18px 16px;
+  padding: 18px;
 }
 
-.card h3 {
-  margin: 0 0 8px;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-}
-
-.card p {
-  margin: 0 0 12px;
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: 14px;
-}
-
+/* Lists inside cards */
 .card ul {
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
-  line-height: 1.8;
-  font-size: 14px;
+  line-height: 1.7;
 }
 
 /* Two column layout */
 .two-col {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 20px;
+  gap: 24px;
   align-items: start;
 }
 
 /* Steps */
-.steps {
-  display: grid;
-  gap: 12px;
-}
+.steps { display: grid; gap: 12px; }
 
 .step {
   display: grid;
@@ -427,46 +405,18 @@ html.theme-light .section::before{
 }
 
 .step .num {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 32px;
   width: 44px;
+  font-weight: 800;
   border-radius: 12px;
   border: 1px solid var(--border);
-  color: var(--fg);
-  font-weight: 700;
-  font-size: 12px;
 }
 
-.step h4 {
-  margin: 0 0 4px;
-  font-size: 14px;
-}
-
-.step p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Contact note line */
-.contact-note {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.contact-note a {
-  color: var(--fg);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border);
-}
-
-.contact-note a:hover {
-  opacity: 0.85;
-}
+/* Anchor spacing for fixed header */
+#systems, #how, #automate, #contact { scroll-margin-top: 110px; }
 
 /* Footer */
 footer {
@@ -480,52 +430,23 @@ footer {
   font-size: 14px;
 }
 
-/* Responsive */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 900px) {
   .cards { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
 }
 
-/* Keep nav visible on mobile and wrap cleanly */
 @media (max-width: 720px) {
-  .nav{
-    flex-wrap: wrap;
-    gap: 10px;
+  body { padding-top: 92px; }
+  .nav { flex-wrap: wrap; }
+
+  .brand-logo {
+    height: 40px;
+    max-width: 180px;
   }
 
-  .brand{
-    flex: 1 1 auto;
-    min-width: 160px;
-  }
-
-  nav{
-    display: block;
-    flex: 1 1 100%;
-  }
-
-  nav ul{
-    justify-content: flex-start;
-    gap: 8px;
-  }
-
-  nav a{
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-
-  .hero{
-    padding: 90px 0 80px;
-  }
-
-  .section{
-    padding: 110px 0;
-  }
-
-  .section.alt{
-    padding: 120px 0;
-  }
-
-  #systems, #how, #contact{
-    scroll-margin-top: 90px;
-  }
+  .section { padding: 110px 0; }
+  .section.alt { padding: 120px 0; }
 }
