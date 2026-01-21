@@ -82,6 +82,10 @@ body {
   background: linear-gradient(180deg, var(--bg), var(--bg-alt));
   overflow-x: hidden;
   padding-top: 78px; /* fixed header offset */
+
+  /* ⬆ Readability bump */
+  font-size: 17px;
+  line-height: 1.65;
 }
 
 /* =========================================================
@@ -162,12 +166,13 @@ header {
 .brand-text { line-height: 1.05; }
 
 .brand-name {
-  font-weight: 750;
-  letter-spacing: 1.2px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  font-size: 15px;
 }
 
 .brand-tag {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
 }
 
@@ -185,6 +190,7 @@ nav a {
   padding: 8px 12px;
   border-radius: 12px;
   transition: 0.2s ease;
+  font-size: 15px;
 }
 
 nav a:hover {
@@ -235,7 +241,7 @@ html.theme-light .theme-toggle { background: rgba(241,242,244,0.86); }
 .kicker {
   display: inline-block;
   margin-bottom: 18px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   padding: 8px 12px;
   border-radius: 999px;
@@ -244,16 +250,16 @@ html.theme-light .theme-toggle { background: rgba(241,242,244,0.86); }
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  line-height: 1.05;
+  font-size: clamp(2.8rem, 6.5vw, 4.6rem);
+  line-height: 1.04;
   margin: 0 0 20px;
 }
 .hero h1 span { color: var(--muted); }
 
 .tagline {
-  max-width: 640px;
-  font-size: 18px;
-  line-height: 1.65;
+  max-width: 680px;
+  font-size: 19px;
+  line-height: 1.7;
   color: var(--muted);
   margin-bottom: 36px;
 }
@@ -350,14 +356,15 @@ main.container { position: relative; z-index: 1; }
 }
 
 .section h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  margin: 0 0 12px;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  margin: 0 0 14px;
 }
 
 .section p {
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
   margin: 0;
+  font-size: 17px;
 }
 
 /* Cards */
@@ -375,12 +382,25 @@ main.container { position: relative; z-index: 1; }
   padding: 18px;
 }
 
+.card h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
 /* Lists inside cards */
 .card ul {
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
   line-height: 1.7;
+  font-size: 15.5px;
 }
 
 /* Two column layout */
@@ -402,6 +422,18 @@ main.container { position: relative; z-index: 1; }
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--step-bg);
+  font-size: 16px;
+}
+
+.step h4 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .step .num {
@@ -411,6 +443,7 @@ main.container { position: relative; z-index: 1; }
   height: 32px;
   width: 44px;
   font-weight: 800;
+  font-size: 15px;
   border-radius: 12px;
   border: 1px solid var(--border);
 }
@@ -427,7 +460,14 @@ footer {
 .footer {
   text-align: center;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
+}
+
+/* =========================================================
+   LARGE MONITOR READABILITY (OPTIONAL BUT NICE)
+   ========================================================= */
+@media (min-width: 1400px) {
+  body { font-size: 18px; }
 }
 
 /* =========================================================
